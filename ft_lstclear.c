@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azrig <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 14:09:53 by azrig             #+#    #+#             */
-/*   Updated: 2025/04/21 20:17:16 by azrig            ###   ########.fr       */
+/*   Created: 2025/04/21 17:54:04 by azrig             #+#    #+#             */
+/*   Updated: 2025/04/21 17:57:39 by azrig            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+	t_list	*current;
+	t_list	*previous;
+
+	if (!lst || !del)
+        return ;
+	current = *lst;
+	while (current)
+	{
+		previous = current;
+		del(current->content);
+		current = current->next;
+		free(previous);
+	}
+	*lst = NULL;
 }
+

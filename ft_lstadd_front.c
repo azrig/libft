@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azrig <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 14:09:53 by azrig             #+#    #+#             */
-/*   Updated: 2025/04/21 20:17:16 by azrig            ###   ########.fr       */
+/*   Created: 2025/04/21 17:45:00 by azrig             #+#    #+#             */
+/*   Updated: 2025/04/21 17:45:40 by azrig            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+    if (!lst || !new)
+        return ;
+    new->next = *lst;
+    *lst = new;
 }

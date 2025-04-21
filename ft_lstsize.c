@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azrig <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 14:09:53 by azrig             #+#    #+#             */
-/*   Updated: 2025/04/21 20:17:16 by azrig            ###   ########.fr       */
+/*   Created: 2025/04/21 17:51:09 by azrig             #+#    #+#             */
+/*   Updated: 2025/04/21 17:51:16 by azrig            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_lstsize(t_list *lst)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+	int		size;
+	t_list	*current;
+
+	current = lst;
+	size = 0;
+	while (current)
+	{
+		size++;
+		current = current->next;
+	}
+	return (size);
 }
