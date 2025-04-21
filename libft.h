@@ -6,7 +6,7 @@
 /*   By: azrig <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 21:06:17 by azrig             #+#    #+#             */
-/*   Updated: 2025/04/21 17:58:52 by azrig            ###   ########.fr       */
+/*   Updated: 2025/04/21 21:26:57 by azrig            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 
 typedef struct s_list
 {
-    void            *content;
-    struct s_list   *next;
-}                   t_list;
+	void			*content;
+	struct s_list	*next;
+}			t_list;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

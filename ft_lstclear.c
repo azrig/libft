@@ -6,7 +6,7 @@
 /*   By: azrig <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 17:54:04 by azrig             #+#    #+#             */
-/*   Updated: 2025/04/21 17:57:39 by azrig            ###   ########.fr       */
+/*   Updated: 2025/04/21 21:29:16 by azrig            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*previous;
 
 	if (!lst || !del)
-        return ;
+		return ;
 	current = *lst;
 	while (current)
 	{
@@ -29,4 +29,3 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = NULL;
 }
-
